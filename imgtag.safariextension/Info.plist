@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Brook Elgie</string>
 	<key>CFBundleDisplayName</key>
-	<string>imgTag</string>
+	<string>Safari imgTag</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.brookelgie.imgtag</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -24,7 +24,7 @@
 				<key>Identifier</key>
 				<string>makeImgtagItem</string>
 				<key>Title</key>
-				<string>Make img tag</string>
+				<string>Make img Tag</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
@@ -45,7 +45,7 @@
 		</array>
 	</dict>
 	<key>Description</key>
-	<string>Create img tags from images on websites.</string>
+	<string>Creates img tags from images on websites.</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -59,6 +59,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>http://brookelgie.com</string>
+	<string>http://lowest-common-denominator.com/safari-imgtag</string>
 </dict>
 </plist>
