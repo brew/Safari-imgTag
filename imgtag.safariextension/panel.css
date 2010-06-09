@@ -1,0 +1,22 @@
+#lcd_imgtag_panel { 
+  display: block !important; 
+  position: fixed !important; 
+  top: 0px !important; 
+  right: 20px !important; 
+  background-color: #ccc !important; 
+  -webkit-border-bottom-right-radius: 5px !important; 
+  -webkit-border-bottom-left-radius: 5px !important; 
+  border-bottom: 1px solid #999 !important; 
+  font: normal 12px arial, verdana, sans-serif !important;  
+  z-index: 1002 !important;
+  width: 50% !important;
+}
+#lcd_imgtag_panel div {
+  padding: 5px !important; 
+  margin: 0 !important;
+}
+#lcd_imgtag_panel #lcd_imgtag_textarea {
+  font-family: "Courier new", monospaced !important; 
+  padding: 5px !important;
+  width:95% !important;
+}
