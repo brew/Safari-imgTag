@@ -1,7 +1,10 @@
 var currentlyOver;
-document.onmouseover = function(event) {
+document.oncontextmenu = function(event) {
   currentlyOver = (event.target.nodeName === 'IMG') ? event.target : null;
+  var isCurrentlyOverImg = (currentlyOver) ? true : false;
+  safari.self.tab.setContextMenuEventUserInfo(event, isCurrentlyOverImg);
 };
+
 function _removePanel(event) {
   if (event.target.className != "lcd_panel_element") {
     if (document.getElementById('lcd_imgtag_panel')) {
@@ -12,11 +15,6 @@ function _removePanel(event) {
     }
   }
 }
-
-function sendContextImageString(event) {
-  if (window !== window.top) return;
-  safari.self.tab.dispatchMessage("context_menu_requested", createImgTag());
-};
 
 function createImgTag() {
   if (window !== window.top) return;
@@ -33,7 +31,7 @@ function createImgTag() {
   return img_string;
 }
 
-function addTextAreaPanel(imgtag_string) {
+function addTextAreaPanel() {
   if (window !== window.top) return;
   var objPanel, objTextArea, objContainer;
 
@@ -54,17 +52,16 @@ function addTextAreaPanel(imgtag_string) {
     document.body.appendChild(objPanel);
     document.addEventListener('click', _removePanel);
   } 
-  document.getElementById('lcd_imgtag_textarea').innerText = imgtag_string;
+  document.getElementById('lcd_imgtag_textarea').innerText = createImgTag();
   document.getElementById('lcd_imgtag_textarea').select();
 
 }
 
 function messageHandler(event) {
   if (window !== window.top) return;
-  if (event.name === "request_last_right_clicked_element") {
-    sendContextImageString(event);
-  } else if (event.name === "open_textarea_box") {
-    addTextAreaPanel(event.message);
+  if (event.name === "open_textarea_box") {
+    addTextAreaPanel();
   }
 }
 safari.self.addEventListener("message", messageHandler, false);
+

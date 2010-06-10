@@ -5,39 +5,17 @@
 
 <script type="text/javascript">
 
-var scratch_pad = "";
-
-function handleMessage(event) {
-	if (event.name === 'context_menu_requested') {
-		if (event.message != "") {
-			setScratchPadToString(event.message);			
-		} else {
-			clearScratchPad();
-		}
-	}
-}
-safari.application.addEventListener("message", handleMessage, false);
-
-function setScratchPadToString(imgString) {
-	console.log("Setting scratch_pad to string: ", imgString);
-	scratch_pad = imgString;
-}
-
-function clearScratchPad() {
-	console.log("Clearing scratch_pad.");
-	scratch_pad = "";
-}
 
 function performCommand(event) {
 	if (event.command === "make_imgtag") {
-		if (scratch_pad != "") {
-			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", scratch_pad);
-		}
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box");
 	}
 }
 function performValidate(event) {
 	if (event.command === 'make_imgtag') {
-		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("request_last_right_clicked_element");
+		if (!event.userInfo) {
+			event.target.disabled = true;
+		}
 	}
 }
 safari.application.addEventListener("command", performCommand, false);
