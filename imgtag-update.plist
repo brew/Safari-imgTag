@@ -7,14 +7,14 @@
      <dict>
        <key>CFBundleIdentifier</key>
        <string>com.brookelgie.imgtag</string>
-       <key>Developer Identifier</key
+       <key>Developer Identifier</key>
        <string>PKQ7MVC652</string>
        <key>CFBundleVersion</key>
        <string>1.2</string>
        <key>CFBundleShortVersionString</key>
        <string>1.2</string>
        <key>URL</key>
-       <string>http://lowest-common-denominator.com/downloads/imgtag.safariextz</string>
+       <string>http://lowest-common-denominator.com/downloads/safari-extensions/imgtag/imgtag.safariextz</string>
      </dict>
    </array>
 </dict>
