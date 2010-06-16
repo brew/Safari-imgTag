@@ -1,22 +1,28 @@
+
 #lcd_imgtag_panel { 
-  display: block !important; 
-  position: fixed !important; 
-  top: 0px !important; 
-  right: 20px !important; 
-  background-color: #ccc !important; 
-  -webkit-border-bottom-right-radius: 5px !important; 
-  -webkit-border-bottom-left-radius: 5px !important; 
-  border-bottom: 1px solid #999 !important; 
-  font: normal 12px arial, verdana, sans-serif !important;  
-  z-index: 1002 !important;
-  width: 50% !important;
+  position: fixed !important;
+  width: 150px !important;
+  height: 72px !important;
+  left: 50% !important;
+  margin-left: -75px !important;
+  top: 30px !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  -webkit-border-radius: 12px !important;
+  z-index: 1003 !important;
+  opacity: 1 !important;
+  -webkit-transition: opacity 0.75s !important;
+  pointer-events: auto !important;
+  zoom: reset !important;
+  white-space:nowrap;
+
+  text-align:center;
 }
-#lcd_imgtag_panel div {
-  padding: 5px !important; 
-  margin: 0 !important;
+#lcd_imgtag_panel img {
+  margin-top:16px;
 }
 #lcd_imgtag_panel #lcd_imgtag_textarea {
-  font-family: "Courier new", monospaced !important; 
-  padding: 5px !important;
-  width:95% !important;
+  width:1px !important;
+  height:1px !important;
+  position:absolute !important;
+  left:-9999px !important;
 }
