@@ -30,7 +30,10 @@ function _removePanel() {
     var panel = document.getElementById('lcd_imgtag_panel');
     var panel_parent = panel.parentNode;
     removeListeners();
-    panel_parent.removeChild(panel);
+    document.getElementById('lcd_imgtag_panel').addEventListener('webkitTransitionEnd', function( event ) {
+      this.parentNode.removeChild(this);
+    });
+    document.getElementById('lcd_imgtag_panel').className += " remove";
   } 
 }
 
@@ -87,10 +90,12 @@ function addTextAreaPanel() {
 
     document.body.appendChild(panel);
     addListeners();
-  } 
+  }
+  setTimeout(function(){
+    document.getElementById('lcd_imgtag_panel').className += " active";
+	}, 0);
   document.getElementById('lcd_imgtag_textarea').innerText = createImgTag();
   document.getElementById('lcd_imgtag_textarea').select();
-
 }
 
 function messageHandler(event) {

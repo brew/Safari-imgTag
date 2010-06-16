@@ -9,16 +9,21 @@
   background: rgba(0, 0, 0, 0.75) !important;
   -webkit-border-radius: 12px !important;
   z-index: 1003 !important;
-  opacity: 1 !important;
-  -webkit-transition: opacity 0.75s !important;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
   pointer-events: auto !important;
   zoom: reset !important;
-  white-space:nowrap;
 
   text-align:center;
 }
+#lcd_imgtag_panel.active {
+  opacity: 1;
+}
+#lcd_imgtag_panel.remove {
+  opacity: 0;
+}
 #lcd_imgtag_panel img {
-  margin-top:16px;
+  margin-top:16px !important;
 }
 #lcd_imgtag_panel #lcd_imgtag_textarea {
   width:1px !important;
