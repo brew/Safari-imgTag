@@ -24,6 +24,7 @@
 }
 #lcd_imgtag_panel img {
   margin-top:16px !important;
+  display:inline !important;
 }
 #lcd_imgtag_panel #lcd_imgtag_textarea {
   width:1px !important;
