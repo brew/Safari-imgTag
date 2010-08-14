@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4.1</string>
+	<string>1.5</string>
 	<key>CFBundleVersion</key>
-	<string>1.4.1</string>
+	<string>1.5</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -25,6 +25,30 @@
 				<string>makeImgtagItem</string>
 				<key>Title</key>
 				<string>Make img Tag</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>make_bbcode</string>
+				<key>Identifier</key>
+				<string>makeBBCodeTagItem</string>
+				<key>Title</key>
+				<string>Make BBCode Tag</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>make_markdown</string>
+				<key>Identifier</key>
+				<string>makeMarkdownTagItem</string>
+				<key>Title</key>
+				<string>Make Markdown Tag</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>make_textile</string>
+				<key>Identifier</key>
+				<string>makeTextileTagItem</string>
+				<key>Title</key>
+				<string>Make Textile Tag</string>
 			</dict>
 		</array>
 		<key>Global Page</key>

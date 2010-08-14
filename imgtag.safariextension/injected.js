@@ -51,22 +51,32 @@ function removeListeners() {
   document.removeEventListener('keydown', _onKeyDown);
 }
 
-function createImgTag() {
+function createImgTag(tagType) {
   if (window !== window.top) return;
   var img_string = "";
-    
+      
   if (currentlyOver) {
-    img_string = '<img src="' + currentlyOver.src + '" ';
-    img_string += 'width="' + currentlyOver.width + '" ';
-    img_string += 'height="' + currentlyOver.height + '" ';
-    img_string += 'alt="' + currentlyOver.alt + '" ';
-    img_string += '/>';
+    if (tagType == undefined || tagType == 'html') {
+      img_string = '<img src="' + currentlyOver.src + '" ';
+      img_string += 'width="' + currentlyOver.width + '" ';
+      img_string += 'height="' + currentlyOver.height + '" ';
+      img_string += 'alt="' + currentlyOver.alt + '" ';
+      img_string += '/>';      
+    } else if (tagType == 'bbcode') {
+      img_string = '[img]' + currentlyOver.src + '[/img]';
+    } else if (tagType == 'markdown') {
+      img_string = '![' + currentlyOver.alt + ']';
+      img_string += '(' + currentlyOver.src + ')';
+    } else if (tagType == 'textile') {
+      img_string = '!' + currentlyOver.src;
+      img_string += '(' + currentlyOver.alt + ')!';
+    }
   } 
 
   return img_string;
 }
 
-function addTextAreaPanel() {
+function addTextAreaPanel(tagType) {
   if (window !== window.top) return;
   var panel, textArea, cloverleaf_c;
 
@@ -94,14 +104,14 @@ function addTextAreaPanel() {
   setTimeout(function(){
     document.getElementById('lcd_imgtag_panel').className += " active";
 	}, 0);
-  document.getElementById('lcd_imgtag_textarea').innerText = createImgTag();
+  document.getElementById('lcd_imgtag_textarea').innerText = createImgTag(tagType);
   document.getElementById('lcd_imgtag_textarea').select();
 }
 
 function messageHandler(event) {
   if (window !== window.top) return;
   if (event.name === "open_textarea_box") {
-    addTextAreaPanel();
+    addTextAreaPanel(event.message);
   }
 }
 safari.self.addEventListener("message", messageHandler, false);

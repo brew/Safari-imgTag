@@ -5,15 +5,36 @@
 
 <script type="text/javascript">
 
-
 function performCommand(event) {
 	if (event.command === "make_imgtag") {
-		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box");
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "html");
+	} else if (event.command === "make_bbcode") {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "bbcode");
+	} else if (event.command === "make_markdown") {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "markdown");
+	} else if (event.command === "make_textile") {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "textile");
 	}
 }
+
 function performValidate(event) {
 	if (event.command === 'make_imgtag') {
-		if (!event.userInfo) {
+		if (!event.userInfo || !safari.extension.settings.getItem('html_tag')) {
+			event.target.disabled = true;
+		}
+	}
+	if (event.command === 'make_bbcode') {
+		if (!event.userInfo || !safari.extension.settings.getItem('bbcode_tag')) {
+			event.target.disabled = true;
+		}
+	}
+	if (event.command === 'make_markdown') {
+		if (!event.userInfo || !safari.extension.settings.getItem('markdown_tag')) {
+			event.target.disabled = true;
+		}
+	}
+	if (event.command === 'make_textile') {
+		if (!event.userInfo || !safari.extension.settings.getItem('textile_tag')) {
 			event.target.disabled = true;
 		}
 	}
