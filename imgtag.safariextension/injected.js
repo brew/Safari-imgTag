@@ -1,9 +1,11 @@
 var currentlyOver;
-document.oncontextmenu = function(event) {
+
+document.addEventListener('contextmenu', _handleContextMenu);
+function _handleContextMenu(event) {
   currentlyOver = (event.target.nodeName === 'IMG') ? event.target : null;
   var isCurrentlyOverImg = (currentlyOver) ? true : false;
-  safari.self.tab.setContextMenuEventUserInfo(event, isCurrentlyOverImg);
-};
+  safari.self.tab.setContextMenuEventUserInfo(event, isCurrentlyOverImg);  
+}
 
 function _onCopyCut(event) {
 	setTimeout(function(){
