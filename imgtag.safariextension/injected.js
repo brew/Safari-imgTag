@@ -65,9 +65,9 @@ function createImgTag(tagType) {
       img_string += 'alt="' + currentlyOver.alt + '" ';
       img_string += '/>';      
     } else if (tagType == 'html_linked') {
-	  img_string = '<a href="' + window.location + '" ';
-	  if(document.getElementsByTagName('title')[0] != undefined) img_string += 'title="' + document.getElementsByTagName('title')[0].innerHTML + '" ';
-	  img_string += '>';
+      img_string = '<a href="' + window.location + '" ';
+	    if(document.getElementsByTagName('title')[0] != undefined) img_string += 'title="' + document.getElementsByTagName('title')[0].innerHTML + '" ';
+	    img_string += '>';
       img_string += '<img src="' + currentlyOver.src + '" ';
       img_string += 'width="' + currentlyOver.width + '" ';
       img_string += 'height="' + currentlyOver.height + '" ';
