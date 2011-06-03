@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5.1</string>
+	<string>1.5.2</string>
 	<key>CFBundleVersion</key>
-	<string>1.5.1</string>
+	<string>1.5.2</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -49,6 +49,14 @@
 				<string>makeTextileTagItem</string>
 				<key>Title</key>
 				<string>Make Textile Tag</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>make_linked_imgtag</string>
+				<key>Identifier</key>
+				<string>makeLinkedImgtagItem</string>
+				<key>Title</key>
+				<string>Make linked img Tag</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
