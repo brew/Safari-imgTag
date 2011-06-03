@@ -8,6 +8,8 @@
 function performCommand(event) {
 	if (event.command === "make_imgtag") {
 		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "html");
+	} else if (event.command === "make_linked_imgtag") {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "html_linked");
 	} else if (event.command === "make_bbcode") {
 		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("open_textarea_box", "bbcode");
 	} else if (event.command === "make_markdown") {
@@ -20,6 +22,11 @@ function performCommand(event) {
 function performValidate(event) {
 	if (event.command === 'make_imgtag') {
 		if (!event.userInfo || !safari.extension.settings.getItem('html_tag')) {
+			event.target.disabled = true;
+		}
+	}
+	if (event.command === 'make_linked_imgtag') {
+		if (!event.userInfo || !safari.extension.settings.getItem('html_linked_tag')) {
 			event.target.disabled = true;
 		}
 	}
