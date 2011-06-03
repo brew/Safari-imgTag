@@ -24,6 +24,16 @@
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
+		<true/>
+		<key>Key</key>
+		<string>html_linked_tag</string>
+		<key>Title</key>
+		<string>Make linked HTML img Tag</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
 		<false/>
 		<key>Key</key>
 		<string>bbcode_tag</string>
